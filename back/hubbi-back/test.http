@@ -1,0 +1,33 @@
+@newDate = {{$datetime rfc1123}}
+
+
+###
+
+GET http://localhost:3000/vendas/
+
+###
+
+POST http://localhost:3000/vendas/
+content-type: application/json
+
+{
+    "id": "{{$guid}}",
+    "data": "{{newDate}}"
+}
+
+
+###
+
+GET http://localhost:3000/produtos/
+
+
+###
+POST http://localhost:3000/produtos/
+content-type: application/json
+
+{
+
+    "nome": "pedra",
+    "quantidade": "{{$randomInt 1 100}}",
+    "idVenda": "401067e6-517a-4b8c-9bfd-52cacd7b8cff"
+}
